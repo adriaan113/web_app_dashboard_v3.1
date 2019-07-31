@@ -7,6 +7,7 @@
 body {
   width: 100%;
   font-family: "Roboto", sans-serif;
+  color: #757575;
   font-weight: 400;
 }
 
@@ -16,6 +17,11 @@ i {
   display: inline-block;
   padding: 3px;
   transform: rotate(-45deg);
+}
+
+a {
+  color: #7476bb;
+  text-decoration: none;
 }
 
 header {
@@ -238,6 +244,148 @@ nav img {
   height: 60%;
   background-color: #7476bb;
   border-radius: 50%;
+}
+
+.new-members {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 10px 20px;
+  border: 1px solid #ccc;
+  padding: 20px 20px 20px 0;
+}
+.new-members h3 {
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.members-container {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #ccc;
+}
+.members-container a {
+  font-size: 0.8em;
+}
+
+.profile-image {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+
+.recent-activity {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0 10px 0;
+  border: 1px solid #ccc;
+  padding: 20px 20px 20px 0;
+}
+.recent-activity h3 {
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.message-user {
+  grid-column: 1/2;
+}
+.message-user form {
+  border-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.message-user form legend h3 {
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.message-user form input, .message-user form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+.message-user form input {
+  height: 35px;
+  padding-left: 10px;
+  margin: 15px 0;
+}
+.message-user form input::placeholder, .message-user form textarea::placeholder {
+  color: #c2c2c2;
+}
+.message-user form textarea {
+  height: 100px;
+  padding: 10px;
+}
+.message-user form button {
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.7em;
+  color: white;
+  background-color: #7476bb;
+  margin: 15px 0 40px 0;
+}
+
+.settings {
+  grid-column: 2/3;
+}
+.settings form {
+  border-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.settings form legend {
+  display: block;
+  margin-right: auto;
+}
+.settings form legend h3 {
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.settings form .test {
+  margin: 15px 0 30px;
+}
+.settings form .test label {
+  float: left;
+  clear: left;
+}
+.settings form .test input {
+  float: right;
+  clear: right;
+}
+.settings form select {
+  width: 100%;
+  height: 35px;
+  color: #c2c2c2;
+  max-width: 400px;
+}
+.settings form button {
+  width: 45%;
+  height: 35px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.7em;
+  color: white;
+}
+.settings form button:nth-of-type(1) {
+  background-color: #7476bb;
+  margin: 20px 15px 40px 0;
+}
+.settings form button:nth-of-type(2) {
+  background-color: #c7c7c7;
+  margin: 20px 0 40px 20px;
 }
 
 input:focus,

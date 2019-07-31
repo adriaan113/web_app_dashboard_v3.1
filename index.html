@@ -130,30 +130,30 @@
             <p>5/3/19</p>
           </div>
 
-          <div class="members-container">
-            <img src="images/member-4.jpg" alt="" class="profile-image">
-            <div class="members-text">
-              <p>kapitein Haddock</p>
-              <a href="#">haddock@molensloot.com</a>
-            </div>
-            <p>11/7/19</p>
+        <div class="members-container">
+          <img src="images/member-4.jpg" alt="" class="profile-image">
+          <div class="members-text">
+            <p>kapitein Haddock</p>
+            <a href="#">haddock@molensloot.com</a>
           </div>
+          <p>11/7/19</p>
+        </div>
 
-          <div class="members-container">
-            <img src="images/member-1.jpg" alt="" class="profile-image">
-            <div class="members-text">
-              <p>duke nukem</p>
-              <a href="#">duke@3drealms.com</a>
-            </div>
-            <p>11/7/19</p>
+        <div class="members-container">
+          <img src="images/member-1.jpg" alt="" class="profile-image">
+          <div class="members-text">
+            <p>duke nukem</p>
+            <a href="#">duke@3drealms.com</a>
           </div>
+          <p>11/7/19</p>
+        </div>
 
         </section>
 
 
 
         <section class="recent-activity">
-
+          <h3>recent activity</h3>
           <div class="members-container">
             <img src="images/member-2.jpg" alt="" class="profile-image">
             <div class="members-text">
@@ -193,24 +193,26 @@
 
         <section class="message-user">
             <form action="#" method="post" id="message-form">
-              <fieldset>
-                <legend>message user</legend>
+
+                <legend><h3>message user</h3></legend>
                 <input type="text" name="user-search" placeholder="Search for User" id="user-search" required>
                 <textarea name="user-message" id="user-message" placeholder="Message for User"></textarea>
                 <button type="submit" form="message_form">send</button>
-              </fieldset>
+
             </form>
           </section>
+
         <section class="settings">
           <form action="#" method="post" id="settings">
-            <fieldset>
-              <legend>settings</legend>
-              <label for="notifications"> Send Email notifications</label>
-              <input type="checkbox" name="settings" value="notifications" id="notifications">
 
-              <label for="public"> Set Profile to Public</label>
-              <input type="checkbox" name="settings" value="public" id="public">
+              <legend><h3>settings</h3></legend>
+              <div class="test">
+                <label for="notifications"> Send Email notifications</label>
+                <input type="checkbox" name="settings" value="notifications" id="notifications">
 
+                <label for="public"> Set Profile to Public</label>
+                <input type="checkbox" name="settings" value="public" id="public">
+              </div>
               <select name="timezone_offset" id="timezone">
                   <option value="" selected="selected" hidden>Select Timezone</option>
                 	<option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
@@ -258,7 +260,6 @@
               <button type="submit" form="settings">save</button>
               <button type="reset" form="settings">cancel</button>
 
-            </fieldset>
           </form>
         </section>
       </main>
