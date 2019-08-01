@@ -23,6 +23,7 @@ $color-font-1: #757575;
 
 body{
   width: 100%;
+  height: 100vh;
   font-family: 'Roboto', sans-serif;
   color: $color-font-1;
   font-weight: 400;
@@ -41,13 +42,19 @@ a{
   text-decoration: none;
 }
 
+p{
+  font-size: .8em;
+}
+
 // -----------HEADER----------- //
 
 header{
+  //position: fixed;
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 60px;
+  //z-index: 1000;
   background-color: $accent-color-light-purple;
 
   .icon{
@@ -127,11 +134,10 @@ nav{
 
 .grid-container{
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(7,1fr);
-
+  grid-template-rows: auto;
 }
 
 // -----------DASHBOARD----------- //
@@ -139,21 +145,27 @@ nav{
 .dashboard{
   display: flex;
   justify-content: flex-start;
+  background-color: $accent-color-grey;
   height: 60px;
   grid-column: 1/3;
   grid-row: 1/2;
 
-  h2{
-    margin: 15px;
-    padding: 5px;
-    color: $color-font-1;
+  .d-container{
+    background-color: white;
+    margin-right: auto;
+    border-right: 1px solid $line-color;
+    h2{
+      margin: 15px;
+      padding: 5px;
+      color: $color-font-1;
+    }
   }
 
   .d-search{
     background-color: $accent-color-grey;
-    border-left: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    margin-left: 30px;
+    //border-left: 1px solid #ccc;
+    //border-bottom: 1px solid #ccc;
+    //margin-left: 30px;
 
       input{
         width: 300px;
@@ -168,22 +180,32 @@ nav{
 }
 
 // -----------ALERT----------- //
-
-.alert{
+.alert-container{
   grid-column: 1/3;
   grid-row: 2/3;
-  height: 30px;
-  background-color: yellow;
-  margin: 0 20px;
-  border-radius: 6px;
+  background-color: white;
+  margin: -1px;
+
+  .alert{
+    height: 30px;
+    background-color: yellow;
+    margin: 20px;
+    border-radius: 6px;
+
+  }
+
 }
+
+
 
 // -----------TRAFFIC----------- //
 
 .traffic{
   grid-column: 1/3;
   grid-row: 3/4;
-  margin: 20px;
+  //margin: 0 20px;
+  padding: 0 20px;
+  background-color: white;
 
     .t-header{
       display: flex;
@@ -225,9 +247,9 @@ nav{
 .daily-traffic, .mobile-users{
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  //margin: 20px 0;
   padding: 0 20px;
-  border: 1px solid $line-color;
+  background-color: white;
 
 
     h3{
@@ -245,11 +267,13 @@ nav{
 
 .social-stats{
   grid-column: 1/3;
-  height: 200px;
+  //height: 200px;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  margin: 20px;
+  //margin: 20px;
+  padding: 20px;
+  background-color: white;
 
     h3{
       display: block;
@@ -313,9 +337,10 @@ nav{
   grid-column: 1/2;
   display: flex;
   flex-direction: column;
-  margin: 30px 0 10px 20px;
-  border: 1px solid $line-color;
-  padding: 20px 20px 20px 0;
+  //margin: 0 0 10px 20px;
+  //border: 1px solid $line-color;
+  background-color: white;
+  padding: 20px;
     h3{
       color: $color-font-1;
       text-transform: uppercase;
@@ -345,8 +370,9 @@ nav{
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
-  margin: 30px 0 10px 0;
-  border: 1px solid $line-color; // BORDERS WITH GRID NOT ON SEPARATE ELEMENTS
+  //margin: 0 0 10px 0;
+  //border: 1px solid $line-color; // BORDERS WITH GRID NOT ON SEPARATE ELEMENTS
+  background-color: white;
   padding: 20px 20px 20px 0;
   h3{
     color: $color-font-1;
@@ -360,16 +386,22 @@ nav{
 
 .message-user{
   grid-column: 1/2;
+  background-color: white;
+
+    h3{
+      color: $color-font-1;
+      text-transform: uppercase;
+      font-weight: lighter;
+      padding: 20px 0 10px 20px
+    }
 
     form{
         border-style: none;
         display: flex;
         flex-direction: column;
-          legend h3{
-            color: $color-font-1;
-            text-transform: uppercase;
-            font-weight: lighter;
-          }
+        padding: 0 10px 0 20px;
+        align-content: space-around;
+
           input, textarea{
             width: 100%;
             border: 1px solid $line-color;
@@ -398,7 +430,7 @@ nav{
             font-size: .7em;
             color: white;
             background-color: $accent-color-light-purple;
-            margin: 15px 0 40px 0;
+            margin-top: 15px;
           }
         }
 
@@ -408,35 +440,41 @@ nav{
 
 .settings{
   grid-column: 2/3;
+  background-color: white;
+  h3{
+     color: $color-font-1;
+     text-transform: uppercase;
+     font-weight: lighter;
+     padding: 20px 0 10px 20px
+   }
   form{
+      height: 100%;
       border-style: none;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
-        legend{
-          display: block;
-          margin-right: auto;
-           h3{
-              color: $color-font-1;
-              text-transform: uppercase;
-              font-weight: lighter;
-            }
+      flex-direction: column;
+      justify-content: center;
+      align-content: space-around;
+      padding: 0 20px 0 10px;
         }
 
-        .test{
+        .settings-input{
+          display: flex;
+          flex-direction: column;
+          width: 60%;
 
-          margin: 15px 0 30px;
-          label{
-            //display: inline-block;
-            float: left;
-            clear: left;
-          }
-          input{
-            //display: inline-block;
-            float: right;
-            clear: right;
-          }
+
+        //   margin: 15px 0 30px;
+        //   label{
+        //     float: left;
+        //     clear: left;
+        //   }
+        //   input{
+        //     float: right;
+        //     clear: right;
+        //     opacity: 0;
+        //     width: 0;
+        //     height: 0;
+        //   }
         }
 
       select{
@@ -445,28 +483,99 @@ nav{
         color: lighten($color-font-1,30%);
         max-width: 400px;
       }
-      button{
 
-        width: 45%;
-        height: 35px;
-        border-radius: 5px;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: .7em;
-        color: white;
-      }
-      button:nth-of-type(1){
-        background-color: $accent-color-light-purple;
-        margin: 20px 15px 40px 0;
+      .settings-btn{
 
-      }
-      button:nth-of-type(2){
-        background-color: darken($accent-color-grey,20%);
-        margin: 20px 0 40px 20px;
-      }
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+
+        button{
+
+          width: 45%;
+          height: 35px;
+          border-radius: 5px;
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: .7em;
+          color: white;
+          margin-top: 15px;
+
+        }
+        button:nth-of-type(1){
+          background-color: $accent-color-light-purple;
+          margin-right: 5%;
+
+
+        }
+        button:nth-of-type(2){
+          background-color: darken($accent-color-grey,20%);
+          margin-left: 5%;
+
+    }
+   }
+ }
+
+// -----------TOGGLE SWITCH----------- //
+
+ .switch {
+
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between; // NOT WORKING AT ALL
+  width: 50px;
+  height: 20px;
+  margin-bottom: 30px;
+    input{
+      opacity: 0;
+      width: 0;
+      height: 0;
+
+    }
+    p{
+      width: 100%;
+      // float: left;
+      // clear: left;
     }
 }
 
+ .slider {
+   position: absolute;
+   cursor: pointer;
+   border-radius: 10px;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: darken($accent-color-grey,20%);
+   transition: .4s;
+   // float: right;
+   // clear: right;
+ }
+
+ .slider:before {
+   position: absolute;
+   content: "";
+   height: 14px;
+   width: 14px;
+   border-radius: 50%;
+   left: 4px;
+   bottom: 3px;
+   background-color: white;
+   transition: .4s;
+ }
+
+ input:checked + .slider {
+   background-color: $accent-color-light-purple;
+ }
+
+ input:focus + .slider {
+   box-shadow: 0 0 1px $accent-color-light-purple;
+ }
+
+ input:checked + .slider:before {
+   transform: translateX(28px);
+ }
 
 
 // -----------PSEUDO CLASSES----------- //
@@ -482,25 +591,71 @@ button:focus{
 
  @media only screen and (min-width: 768px){
 
+   body{
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    'header  header'
+    'nav container';
+    //border: 1px solid $line-color;
+
+   }
+
+   header{
+     position: fixed;
+     z-index: 1000;
+     grid-area: header;
+   }
+
+   .dashboard{
+     margin-top: 60px;
+   }
+
+   .alert{
+
+   }
+
+
    nav{
-     display:inline-flex;
+     position: fixed;
+     grid-area: nav;
+
+     top: 60px;
+     display:flex;
      flex-direction: column;
      justify-content: flex-start;
-     align-items: center;
-     width: 5em;
+     width: 60px;
      height: 100vh;
-     background-color: #4e4d70;
-     padding: 20px;
+     background-color: $accent-color-dark-purple;
+     float: left;
+     overflow-x: hidden;
+
 
      a{
-       width: 70%;
+       width: 30px;
+       margin: 15px;
+       height: auto;
+       padding: 5px;
      }
 
      img{
-       margin: 0 auto;
        width: 100%;
-       padding-bottom: 40px;
+       padding-bottom: 0;
      }
+   }
+
+   .grid-container{
+     grid-area: container;
+     grid-gap: 1px;
+     background-color: $line-color;
+     //width: 100%;
+     //height: 100%;
+     // margin-left: 60px;
+     // top:60px;
+     //display: grid;
+     //grid-template-columns: repeat(2,1fr);
+     float: right;
    }
 
  }

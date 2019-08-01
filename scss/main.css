@@ -6,6 +6,7 @@
 
 body {
   width: 100%;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   color: #757575;
   font-weight: 400;
@@ -22,6 +23,10 @@ i {
 a {
   color: #7476bb;
   text-decoration: none;
+}
+
+p {
+  font-size: 0.8em;
 }
 
 header {
@@ -93,29 +98,32 @@ nav img {
 
 .grid-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(7, 1fr);
+  grid-template-rows: auto;
 }
 
 .dashboard {
   display: flex;
   justify-content: flex-start;
+  background-color: #fafafa;
   height: 60px;
   grid-column: 1/3;
   grid-row: 1/2;
 }
-.dashboard h2 {
+.dashboard .d-container {
+  background-color: white;
+  margin-right: auto;
+  border-right: 1px solid #ccc;
+}
+.dashboard .d-container h2 {
   margin: 15px;
   padding: 5px;
   color: #757575;
 }
 .dashboard .d-search {
   background-color: #fafafa;
-  border-left: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  margin-left: 30px;
 }
 .dashboard .d-search input {
   width: 300px;
@@ -127,19 +135,24 @@ nav img {
   border: 1px solid #ccc;
 }
 
-.alert {
+.alert-container {
   grid-column: 1/3;
   grid-row: 2/3;
+  background-color: white;
+  margin: -1px;
+}
+.alert-container .alert {
   height: 30px;
   background-color: yellow;
-  margin: 0 20px;
+  margin: 20px;
   border-radius: 6px;
 }
 
 .traffic {
   grid-column: 1/3;
   grid-row: 3/4;
-  margin: 20px;
+  padding: 0 20px;
+  background-color: white;
 }
 .traffic .t-header {
   display: flex;
@@ -177,9 +190,8 @@ nav img {
 .daily-traffic, .mobile-users {
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
   padding: 0 20px;
-  border: 1px solid #ccc;
+  background-color: white;
 }
 .daily-traffic h3, .mobile-users h3 {
   color: #757575;
@@ -192,11 +204,11 @@ nav img {
 
 .social-stats {
   grid-column: 1/3;
-  height: 200px;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  margin: 20px;
+  padding: 20px;
+  background-color: white;
 }
 .social-stats h3 {
   display: block;
@@ -250,9 +262,8 @@ nav img {
   grid-column: 1/2;
   display: flex;
   flex-direction: column;
-  margin: 30px 0 10px 20px;
-  border: 1px solid #ccc;
-  padding: 20px 20px 20px 0;
+  background-color: white;
+  padding: 20px;
 }
 .new-members h3 {
   color: #757575;
@@ -280,8 +291,7 @@ nav img {
   grid-column: 2/3;
   display: flex;
   flex-direction: column;
-  margin: 30px 0 10px 0;
-  border: 1px solid #ccc;
+  background-color: white;
   padding: 20px 20px 20px 0;
 }
 .recent-activity h3 {
@@ -293,16 +303,20 @@ nav img {
 
 .message-user {
   grid-column: 1/2;
+  background-color: white;
+}
+.message-user h3 {
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: lighter;
+  padding: 20px 0 10px 20px;
 }
 .message-user form {
   border-style: none;
   display: flex;
   flex-direction: column;
-}
-.message-user form legend h3 {
-  color: #757575;
-  text-transform: uppercase;
-  font-weight: lighter;
+  padding: 0 10px 0 20px;
+  align-content: space-around;
 }
 .message-user form input, .message-user form textarea {
   width: 100%;
@@ -331,46 +345,45 @@ nav img {
   font-size: 0.7em;
   color: white;
   background-color: #7476bb;
-  margin: 15px 0 40px 0;
+  margin-top: 15px;
 }
 
 .settings {
   grid-column: 2/3;
+  background-color: white;
 }
-.settings form {
-  border-style: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.settings form legend {
-  display: block;
-  margin-right: auto;
-}
-.settings form legend h3 {
+.settings h3 {
   color: #757575;
   text-transform: uppercase;
   font-weight: lighter;
+  padding: 20px 0 10px 20px;
 }
-.settings form .test {
-  margin: 15px 0 30px;
+.settings form {
+  height: 100%;
+  border-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  padding: 0 20px 0 10px;
 }
-.settings form .test label {
-  float: left;
-  clear: left;
+.settings .settings-input {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
-.settings form .test input {
-  float: right;
-  clear: right;
-}
-.settings form select {
+.settings select {
   width: 100%;
   height: 35px;
   color: #c2c2c2;
   max-width: 400px;
 }
-.settings form button {
+.settings .settings-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.settings .settings-btn button {
   width: 45%;
   height: 35px;
   border-radius: 5px;
@@ -378,14 +391,68 @@ nav img {
   font-weight: bold;
   font-size: 0.7em;
   color: white;
+  margin-top: 15px;
 }
-.settings form button:nth-of-type(1) {
+.settings .settings-btn button:nth-of-type(1) {
   background-color: #7476bb;
-  margin: 20px 15px 40px 0;
+  margin-right: 5%;
 }
-.settings form button:nth-of-type(2) {
+.settings .settings-btn button:nth-of-type(2) {
   background-color: #c7c7c7;
-  margin: 20px 0 40px 20px;
+  margin-left: 5%;
+}
+
+.switch {
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50px;
+  height: 20px;
+  margin-bottom: 30px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch p {
+  width: 100%;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c7c7c7;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #7476bb;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #7476bb;
+}
+
+input:checked + .slider:before {
+  transform: translateX(28px);
 }
 
 input:focus,
@@ -396,23 +463,52 @@ button:focus {
 }
 
 @media only screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "header  header" "nav container";
+  }
+
+  header {
+    position: fixed;
+    z-index: 1000;
+    grid-area: header;
+  }
+
+  .dashboard {
+    margin-top: 60px;
+  }
+
   nav {
-    display: inline-flex;
+    position: fixed;
+    grid-area: nav;
+    top: 60px;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    width: 5em;
+    width: 60px;
     height: 100vh;
     background-color: #4e4d70;
-    padding: 20px;
+    float: left;
+    overflow-x: hidden;
   }
   nav a {
-    width: 70%;
+    width: 30px;
+    margin: 15px;
+    height: auto;
+    padding: 5px;
   }
   nav img {
-    margin: 0 auto;
     width: 100%;
-    padding-bottom: 40px;
+    padding-bottom: 0;
+  }
+
+  .grid-container {
+    grid-area: container;
+    grid-gap: 1px;
+    background-color: #ccc;
+    float: right;
   }
 }
 
