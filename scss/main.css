@@ -25,11 +25,6 @@ a {
   text-decoration: none;
 }
 
-h3 {
-  font-weight: lighter;
-  text-transform: uppercase;
-}
-
 p {
   font-size: 0.8em;
 }
@@ -92,7 +87,6 @@ header h1::after {
   position: absolute;
 }
 header h3 {
-  font-size: 0.7em;
   font-weight: lighter;
   color: white;
   margin: auto 0;
@@ -185,10 +179,6 @@ nav img {
   display: flex;
   justify-content: space-between;
 }
-.traffic .t-header h3 {
-  text-transform: uppercase;
-  color: #757575;
-}
 
 .t-nav {
   display: flex;
@@ -221,7 +211,6 @@ nav img {
   background-color: white;
 }
 .daily-traffic h3, .mobile-users h3 {
-  color: #757575;
   margin: 30px 0 10px;
 }
 .daily-traffic .widget-container-half, .mobile-users .widget-container-half {
@@ -240,9 +229,6 @@ nav img {
 .social-stats h3 {
   display: block;
   width: 100%;
-  font-weight: lighter;
-  color: #757575;
-  text-transform: uppercase;
 }
 
 .social-container {
@@ -299,9 +285,6 @@ nav img {
   padding: 20px;
 }
 .new-members h3 {
-  color: #757575;
-  text-transform: uppercase;
-  font-weight: lighter;
   margin-bottom: 20px;
 }
 
@@ -339,9 +322,6 @@ nav img {
   padding: 20px;
 }
 .recent-activity h3 {
-  color: #757575;
-  text-transform: uppercase;
-  font-weight: lighter;
   margin-bottom: 20px;
 }
 
@@ -350,9 +330,6 @@ nav img {
   background-color: white;
 }
 .message-user h3 {
-  color: #757575;
-  text-transform: uppercase;
-  font-weight: lighter;
   padding: 20px 0 10px 20px;
 }
 .message-user form {
@@ -400,9 +377,6 @@ nav img {
   justify-content: flex-start;
 }
 .settings h3 {
-  color: #757575;
-  text-transform: uppercase;
-  font-weight: lighter;
   padding: 20px 0 10px 20px;
 }
 .settings form {

@@ -36,11 +36,6 @@ a{
   text-decoration: none;
 }
 
-h3{
-  font-weight: lighter;
-  text-transform: uppercase;
-}
-
 p{
   font-size: .8em;
 }
@@ -112,7 +107,6 @@ header{
  }
 
  h3{
-   font-size: .7em;
    font-weight: lighter;
    color: white;
    margin: auto 0;
@@ -222,11 +216,6 @@ nav{
     .t-header{
       display: flex;
       justify-content: space-between;
-
-        h3{
-          text-transform: uppercase;
-          color: $color-font-1 ;
-        }
     }
 }
 
@@ -263,7 +252,6 @@ nav{
   background-color: white;
 
     h3{
-      color: $color-font-1;
       margin: 30px 0 10px;
     }
 
@@ -286,9 +274,6 @@ nav{
     h3{
       display: block;
       width: 100%;
-      font-weight: lighter;
-      color: $color-font-1;
-      text-transform: uppercase;
     }
 }
 
@@ -353,9 +338,6 @@ nav{
   padding: 20px;
 
     h3{
-      color: $color-font-1;
-      text-transform: uppercase;
-      font-weight: lighter;
       margin-bottom: 20px;
     }
 }
@@ -398,9 +380,6 @@ nav{
   padding: 20px;
 
   h3{
-    color: $color-font-1;
-    text-transform: uppercase;
-    font-weight: lighter;
     margin-bottom: 20px;
   }
 }
@@ -412,9 +391,6 @@ nav{
   background-color: white;
 
   h3{
-    color: $color-font-1;
-    text-transform: uppercase;
-    font-weight: lighter;
     padding: 20px 0 10px 20px
   }
 
@@ -472,9 +448,6 @@ nav{
   justify-content: flex-start;
 
   h3{
-     color: $color-font-1;
-     text-transform: uppercase;
-     font-weight: lighter;
      padding: 20px 0 10px 20px
    }
 
