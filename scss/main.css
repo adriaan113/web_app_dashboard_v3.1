@@ -25,6 +25,13 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  font-size: 1em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: #757575;
+}
+
 p {
   font-size: 0.8em;
 }
@@ -48,14 +55,13 @@ header .icon {
   border-right: 1px solid black;
 }
 header .icon img {
-  margin-top: 10px;
+  margin: 7px 15px;
 }
 header img {
-  width: 1.5em;
-  height: 1.5em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
-  margin-top: 20px;
-  margin-left: 1em;
+  margin: 15px 30px 0 15px;
 }
 header .icon::after {
   content: " ";
@@ -64,10 +70,10 @@ header .icon::after {
   border-radius: 50%;
   background-color: lightgreen;
   position: absolute;
-  top: 10px;
+  top: 7px;
   right: 0;
   bottom: 0;
-  left: 36px;
+  left: 39px;
 }
 header h1 {
   font-weight: 400;
@@ -87,10 +93,7 @@ header h1::after {
   position: absolute;
 }
 header h3 {
-  font-weight: lighter;
-  color: white;
-  margin: auto 0;
-  padding: 3px 20px 0 5px;
+  display: none;
 }
 
 nav {
@@ -107,16 +110,13 @@ nav a {
   height: auto;
   padding: 20px;
 }
-nav .nav-selected {
-  border-bottom: 4px solid lightgreen;
+nav .nav-small {
+  margin: 0 auto;
 }
-nav .nav-selected img {
-  filter: opacity(100%);
-}
-nav img {
-  width: 100%;
-  padding-bottom: 0;
-  filter: opacity(50%);
+nav .nav-small img {
+  display: block;
+  width: 30px;
+  height: auto;
 }
 
 .grid-container {
@@ -147,7 +147,6 @@ nav img {
   background-color: #fafafa;
 }
 .dashboard .d-search input {
-  width: 300px;
   height: 40px;
   float: right;
   margin: 10px 20px;
@@ -490,6 +489,66 @@ button:focus {
   outline: none;
 }
 
+@media only screen and (min-width: 360px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-color: #4e4d70;
+  }
+  nav a {
+    width: 65px;
+    margin: 0 15px;
+    height: auto;
+    padding: 20px;
+  }
+  nav .nav-selected {
+    border-bottom: 4px solid lightgreen;
+  }
+  nav .nav-selected img {
+    filter: opacity(100%);
+  }
+  nav img {
+    width: 100%;
+    min-width: 25px;
+    padding-bottom: 0;
+    filter: opacity(50%);
+  }
+
+  .nav-small {
+    display: none;
+  }
+}
+@media only screen and (min-width: 500px) {
+  header h3 {
+    display: inline-block;
+    font-size: 0.7em;
+    margin: auto 0;
+    padding: 3px 20px 0 5px;
+    font-weight: lighter;
+    color: white;
+  }
+  header .icon img {
+    margin-top: 10px;
+  }
+  header img {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 20px 0 0 15px;
+  }
+  header .icon::after {
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    left: 36px;
+  }
+
+  .d-search input {
+    width: 300px;
+  }
+}
 @media only screen and (min-width: 768px) {
   body {
     display: grid;
