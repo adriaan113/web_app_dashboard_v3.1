@@ -25,7 +25,16 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
 p {
+  font-size: 0.8em;
+}
+
+::placeholder {
   font-size: 0.8em;
 }
 
@@ -37,6 +46,7 @@ header {
   background-color: #7476bb;
 }
 header .icon {
+  position: relative;
   height: 70%;
   margin: auto 0;
   padding-right: 1em;
@@ -52,16 +62,28 @@ header img {
   margin-top: 20px;
   margin-left: 1em;
 }
+header .icon::after {
+  content: " ";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: lightgreen;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: 36px;
+}
 header h1 {
   font-weight: bold;
-  padding-left: 0.4em;
+  padding-left: 15px;
   margin-right: auto;
   margin-top: auto;
   color: white;
   font-size: 1.3em;
 }
 header h1 span {
-  font-weight: 400;
+  font-weight: 300;
 }
 header h1::after {
   content: "TM";
@@ -74,7 +96,7 @@ header h3 {
   font-weight: lighter;
   color: white;
   margin: auto 0;
-  padding: 0.4em;
+  padding: 3px 20px 0 5px;
 }
 
 nav {
@@ -86,22 +108,26 @@ nav {
   background-color: #4e4d70;
 }
 nav a {
-  width: 30px;
-  margin: 15px;
+  width: 65px;
+  margin: 0 15px;
   height: auto;
-  padding: 5px;
+  padding: 20px;
+}
+nav .nav-selected {
+  border-bottom: 4px solid lightgreen;
+}
+nav .nav-selected img {
+  filter: opacity(100%);
 }
 nav img {
   width: 100%;
   padding-bottom: 0;
+  filter: opacity(50%);
 }
 
 .grid-container {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
 }
 
 .dashboard {
@@ -213,6 +239,7 @@ nav img {
 .social-stats h3 {
   display: block;
   width: 100%;
+  font-weight: lighter;
   color: #757575;
   text-transform: uppercase;
 }
@@ -220,14 +247,19 @@ nav img {
 .social-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: 30%;
   max-width: 230px;
+  min-width: 180px;
   height: 80px;
-  margin: 0 auto;
+  margin: 20px 10px;
   background-color: #fafafa;
+}
+
+.social-container:last-child {
+  margin-right: 0;
 }
 
 .social-text {
@@ -246,14 +278,14 @@ nav img {
 }
 
 .social-img {
-  width: 80px;
-  margin: auto;
+  width: 50px;
+  margin: 14px;
 }
 
 .social-icons {
   fill: white;
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   background-color: #7476bb;
   border-radius: 50%;
 }
@@ -276,15 +308,26 @@ nav img {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #ccc;
+  padding: 7px 0;
+  height: 50px;
 }
 .members-container a {
   font-size: 0.8em;
+}
+.members-container p {
+  align-self: center;
+  margin-left: auto;
+}
+
+.members-container:last-child {
+  border-bottom: none;
 }
 
 .profile-image {
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
+  margin-right: 7px;
 }
 
 .recent-activity {
@@ -292,7 +335,7 @@ nav img {
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px 20px 20px 0;
+  padding: 20px;
 }
 .recent-activity h3 {
   color: #757575;
@@ -315,7 +358,7 @@ nav img {
   border-style: none;
   display: flex;
   flex-direction: column;
-  padding: 0 10px 0 20px;
+  padding: 20px;
   align-content: space-around;
 }
 .message-user form input, .message-user form textarea {
@@ -351,6 +394,9 @@ nav img {
 .settings {
   grid-column: 2/3;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .settings h3 {
   color: #757575;
@@ -363,9 +409,9 @@ nav img {
   border-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-content: space-around;
-  padding: 0 20px 0 10px;
+  padding: 20px;
 }
 .settings .settings-input {
   display: flex;
@@ -376,12 +422,17 @@ nav img {
   width: 100%;
   height: 35px;
   color: #c2c2c2;
-  max-width: 400px;
+  max-width: 600px;
+}
+.settings select:first-child {
+  font-size: 0.8em;
 }
 .settings .settings-btn {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  max-width: 600px;
+  align-content: space-between;
 }
 .settings .settings-btn button {
   width: 45%;
@@ -404,10 +455,11 @@ nav img {
 
 .switch {
   position: relative;
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 50px;
-  height: 20px;
+  justify-content: flex-start;
+  width: 100%;
+  height: 16px;
   margin-bottom: 30px;
 }
 .switch input {
@@ -423,8 +475,9 @@ nav img {
   position: absolute;
   cursor: pointer;
   border-radius: 10px;
+  width: 44px;
   top: 0;
-  left: 0;
+  left: 150px;
   right: 0;
   bottom: 0;
   background-color: #c7c7c7;
@@ -434,11 +487,11 @@ nav img {
 .slider:before {
   position: absolute;
   content: "";
-  height: 14px;
-  width: 14px;
+  height: 12px;
+  width: 12px;
   border-radius: 50%;
   left: 4px;
-  bottom: 3px;
+  bottom: 2px;
   background-color: white;
   transition: 0.4s;
 }
@@ -452,7 +505,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(28px);
+  transform: translateX(23px);
 }
 
 input:focus,
@@ -494,21 +547,32 @@ button:focus {
     overflow-x: hidden;
   }
   nav a {
-    width: 30px;
-    margin: 15px;
+    width: 65px;
+    margin: 15px 0;
     height: auto;
-    padding: 5px;
+    padding: 20px;
+  }
+  nav .nav-selected {
+    border-left: 4px solid lightgreen;
+    border-bottom: 0;
   }
   nav img {
     width: 100%;
     padding-bottom: 0;
+    margin-left: -2px;
   }
 
   .grid-container {
+    display: grid;
     grid-area: container;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 1px;
     background-color: #ccc;
     float: right;
+  }
+
+  .social-stats {
+    justify-content: space-around;
   }
 }
 
