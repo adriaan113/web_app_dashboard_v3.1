@@ -1,9 +1,10 @@
-const ctx = document.getElementById('traffic-chart');
+const mainTraffic = document.getElementById('traffic-chart');
 
 Chart.defaults.global.defaultFontColor = '#ccc';
 Chart.defaults.global.defaultFontSize = 11;
 
-const traffic = new Chart(ctx, {
+
+new Chart(mainTraffic, {
     type: 'line',
     data: {
         labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26','27-3','4-10','11-17','18-24','25-31'],
@@ -19,7 +20,6 @@ const traffic = new Chart(ctx, {
             pointRadius: '6',
             pointHoverBorderWidth: '8',
             pointHitRadius: '6',
-
         }]
     },
     options: {
@@ -44,15 +44,17 @@ const traffic = new Chart(ctx, {
     }
 });
 
-const dt = document.getElementById('traffic-graph');
+const dailyTraffic = document.getElementById('traffic-graph');
 
-new Chart( dt, {
+new Chart(dailyTraffic, {
   type: 'bar',
   data: {
     labels:['S', 'M', 'T','W','T','F','S'],
     datasets: [{
         data:[ '80','110','175','139','243','219','118'],
         backgroundColor: 'rgba(116, 118, 187, 1)',
+        hoverBackgroundColor: 'rgb(78, 77, 112)',
+
     }]
   },
   options:{
@@ -69,4 +71,34 @@ new Chart( dt, {
     }
   }
 
+});
+
+const mobileUsers = document.getElementById('mobile-graph');
+
+new Chart(mobileUsers, {
+  type: 'doughnut',
+  data: {
+    labels:['Phones', 'Tablets', 'Desktop'],
+    datasets: [{
+      data:['60','30','10'],
+      backgroundColor:[
+        'rgb(116, 118, 187)',
+        'rgb(136, 176, 189)',
+        'lightgreen'
+      ],
+      hoverBackgroundColor:[
+        'rgb(78, 77, 112)',
+        'rgb(108, 138, 148)',
+        'green'
+      ],
+      borderWidth: 0
+    }]
+  },
+  options:{
+    legend:{
+      position: 'right',
+
+    },
+
+  }
 });

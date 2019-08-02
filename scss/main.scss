@@ -276,7 +276,7 @@ nav{
     }
 
     .widget-container-half{
-      background-color: yellow;
+      background-color: white;
       margin-bottom: 40px;
     }
 }
@@ -729,9 +729,10 @@ button:focus{
    }
 
    .grid-container{
-     display: grid;
      grid-area: container;
+     display: grid;
      grid-template-columns: repeat(2,1fr);
+
      grid-gap: 1px;
      background-color: $line-color;
      float: right;
