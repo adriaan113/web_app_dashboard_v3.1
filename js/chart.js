@@ -1,3 +1,6 @@
+
+//------------MAIN TRAFFIC CHART------------//
+
 const mainTraffic = document.getElementById('traffic-chart');
 
 Chart.defaults.global.defaultFontColor = '#ccc';
@@ -44,6 +47,28 @@ new Chart(mainTraffic, {
     }
 });
 
+
+// function updateConfigAsNewObject(chart) {
+//     chart.options = {
+//
+//         title: {
+//             display: true,
+//             text: 'Chart.js'
+//         },
+//         scales: {
+//             xAxes: [{
+//                 display: true
+//             }],
+//             yAxes: [{
+//                 display: true
+//             }]
+//         }
+//     };
+//     chart.update();
+// }
+
+//------------DAILY TRAFFIC CHART------------//
+
 const dailyTraffic = document.getElementById('traffic-graph');
 
 new Chart(dailyTraffic, {
@@ -72,6 +97,8 @@ new Chart(dailyTraffic, {
   }
 
 });
+
+//------------MOBILE USERS CHART------------//
 
 const mobileUsers = document.getElementById('mobile-graph');
 

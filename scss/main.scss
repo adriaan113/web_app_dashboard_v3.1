@@ -696,6 +696,13 @@ button:focus{
      margin-top: 60px;
    }
 
+   .d-search{
+
+     input{
+       width: 300px;
+     }
+   }
+
    nav{
      position: fixed;
      grid-area: nav;
