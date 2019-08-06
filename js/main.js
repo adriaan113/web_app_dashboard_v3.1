@@ -1,11 +1,12 @@
 //-----------NOTIFICATION ICON MENU-----------//
 
 const icon= document.querySelector('.icon > img');
-const iconAfter= document.querySelector('.dot');
+const iconAfter= document.querySelector('.notification-dot');
 
 icon.addEventListener('click', ()=>{
   iconAfter.style.display='none';
 });
+
 
 
 

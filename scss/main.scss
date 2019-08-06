@@ -13,7 +13,7 @@ $color-font-1: #757575;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 body{
@@ -23,6 +23,15 @@ body{
   color: $color-font-1;
   font-weight: 400;
 }
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  //grid-auto-rows: repeat(3,1fr);
+}
+
+// -----------FONTS----------- //
+
 
 i { //arrows at RECENT ACTIVITY
   border: solid black;
@@ -41,7 +50,9 @@ h3{
   font-size: 1em;
   font-weight: lighter;
   text-transform: uppercase;
-  color: $color-font-1 ;
+  color: $color-font-1;
+
+  text-align: center;
 }
 
 p{
@@ -52,18 +63,14 @@ p{
   font-size: .8em;
 }
 
-.wrapper{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
 
-}
 
 // -----------HEADER----------- //
 
 header{
+
   display: flex;
-  justify-content: space-between;
+//  justify-content: space-between;
   width: 100%;
   height: 60px;
   background-color: $accent-color-light-purple;
@@ -72,26 +79,23 @@ header{
     position: relative;
     height: 70%;
     margin: auto 0;
-    padding-right: 1em;
+    //padding-right: 1em;
     border-right: 1px solid black;
 
     img{
       margin: 7px 15px;
-      //margin-top:10px;
     }
   }
 
   img{
     width: 2em;
     height: 2em;
-   // width: 1.5em;
-   // height: 1.5em;
-   border-radius: 50%;
-   margin: 15px 30px 0 15px;
-   //margin: 20px 0 0 15px;
- }
+    border-radius: 50%;
+    margin: 15px 15px 0 15px;
+    cursor: pointer;
+  }
 
-.dot{
+  .notification-dot{
     width: 5px;
     height: 5px;
     border-radius: 50%;
@@ -101,25 +105,7 @@ header{
     right: 0;
     bottom: 0;
     left: 39px;
-}
-
-
-  // .icon::after{
-  //   content: " ";
-  //   width: 5px;
-  //   height: 5px;
-  //   border-radius: 50%;
-  //   background-color: lightgreen;
-  //   position: absolute;
-  //   top: 7px;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 39px;
-  //   // top: 10px;
-  //   // right: 0;
-  //   // bottom: 0;
-  //   // left: 36px;
-  // }
+  }
 
   h1{
    font-weight: 400;
@@ -133,22 +119,24 @@ header{
      font-weight: 300;
    }
 
- }
- h1::after{
+  }
+
+  h1::after{
    content:"TM";
    font-size: .3em;
    font-weight: lighter;
    position: absolute;
- }
+  }
 
- h3{
+  h3{
    display: none;
- }
+  }
 }
 
 // -----------NAVIGATION----------- //
 
 nav{
+
   display:flex;
   flex-direction: row;
   justify-content: space-between;
@@ -157,41 +145,44 @@ nav{
   background-color: $accent-color-dark-purple;
   z-index: 1000;
   a{
-    width: 65px;
-    margin: 0 15px;
-    height: auto;
-    padding: 20px;
-  }
-
-  // .nav-selected{
-  //   border-bottom: 4px solid lightgreen;
-  //     img{
-  //     filter:opacity(100%);
-  //   }
-
-
-  img{
-    // display: none;
+    //width: 65px;
+    //margin: 0 15px;
+    //height: auto;
+    //padding: 20px;
+    img{
+      display: none;
+    }
   }
 
   .nav-small{
-
     margin: 0 auto;
+    padding: 20px 0;
+    margin: 0 15px;
     img{
       display: block;
       width: 30px;
       height: auto;
-
     }
   }
 }
 
 // -----------GRID----------- //
 
-.grid-container{ //andere naam geven
-  // width: 100%;
-  // height: 100%;
+.grid-container{
 
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  //grid-template-rows: repeat(9,1fr);
+  grid-gap: 1px;
+  background-color: $line-color;
+  //margin-left: 60px;
+
+  //overflow-x: hidden;
+
+  //width: calc(100% - 60px);
+  //height: 100%;
 }
 
 // -----------DASHBOARD----------- //
@@ -201,17 +192,17 @@ nav{
   justify-content: flex-start;
   background-color: $accent-color-grey;
   height: 60px;
-  grid-column: 1/3;
-  grid-row: 1/2;
+  // grid-column: 1/3;
+  // grid-row: 1/2;
 
   .d-container{
     background-color: white;
-    margin-right: auto;
+    //margin-right: auto;
     border-right: 1px solid $line-color;
     h2{
       font-weight: 400;
-      margin: 15px;
-      padding: 5px;
+      margin: 15px 0;
+      padding: 5px 15px;
       color: $color-font-1;
     }
   }
@@ -219,10 +210,10 @@ nav{
   .d-search{
     background-color: $accent-color-grey;
       input{
-        //width: 300px;
         height: 40px;
-        float: right;
-        margin: 10px 20px;
+        width: 140px;
+        //float: right;
+        margin: 10px 5px;
         padding-left: 10px;
         border-radius: 6px;
         border: 1px solid $line-color;
@@ -231,23 +222,21 @@ nav{
 }
 
 // -----------ALERT----------- //
+
 .alert-container{
-  grid-column: 1/3;
-  grid-row: 2/3;
+  // grid-column: 1/3;
+  // grid-row: 2/3;
   background-color: white;
-  margin: -1px;
+  margin: -1px 0;
 
   .alert{
     height: 30px;
     color: white;
-    //padding: 5px;
     background-color: $accent-color-dark-purple;
-    margin: 20px;
+    margin: 10px; //20px;
     border-radius: 6px;
       p{
         display: inline-block;
-        //float: left;
-        //clear: left;
       }
   }
 }
@@ -257,33 +246,38 @@ nav{
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  font-size: .8em;
 }
 
-.alert-message{
-  //margin-right: auto;
-}
 .alert-banner-close{
-  //margin-left: auto;
   margin-right: 5px;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 // -----------TRAFFIC----------- //
 
 .traffic{
-  grid-column: 1/3;
-  grid-row: 3/4;
-  padding: 0 20px;
+  // grid-column: 1/3;
+  // grid-row: 3/4;
+  //padding: 0 20px;
   background-color: white;
 
     .t-header{
-      display: flex;
-      justify-content: space-between;
+      //display: flex;
+      //flex-direction: column;
+      //justify-content: space-between;
+      //align-items: flex-start;
+      h3{
+        margin: 20px 0 20px;
+      }
     }
 }
 
 .t-nav{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style: none;
 }
 
@@ -291,6 +285,7 @@ nav{
   padding: 10px;
   color: $color-font-1;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .active{
@@ -301,13 +296,12 @@ nav{
 
 .widget-container-full{
  position: relative;
- background-color: white;
- //margin: auto;
- // height: 80vh;
- // width: 80vw;
-
- // height: 100%;
-  margin: 20px 0;
+ background-color: yellow;
+ width: 95vw;
+ height: 15vh;
+ // max-width: 976px;
+ // max-height: 488px;
+ margin: 20px 0;
 }
 
 // -----------DAILY TRAFFIC & MOBILE USERS----------- //
@@ -315,36 +309,38 @@ nav{
 .daily-traffic, .mobile-users{
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  //padding: 0 20px;
   background-color: white;
     h3{
       margin: 30px 0 10px;
     }
+}
 
-    .widget-container-half{
-      background-color: white;
-      margin-bottom: 40px;
-
-      position: relative;
-    //  margin: auto;
-      // height: 80vh;
-      // width: 80vw;
-    }
+.widget-container-half{
+  position: relative;
+  background-color: yellow;
+  width: 95vw;
+  height: 15vh;
+  // max-width: 542px;
+  // max-height: 271px;
+  margin-bottom: 40px;
 }
 
 // -----------SOCIAL STATS----------- //
 
 .social-stats{
-  grid-column: 1/3;
+  // grid-column: 1/3;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  padding: 20px;
+  justify-content: center;
+  //justify-content: flex-start;
+  //padding: 20px;
   background-color: white;
 
     h3{
       display: block;
       width: 100%;
+      margin: 30px 0 10px;
     }
 }
 
@@ -362,9 +358,9 @@ nav{
   background-color: $accent-color-grey;
 }
 
-.social-container:last-child{
-  margin-right: 0;
-}
+// .social-container:last-child{
+//   margin-right: 0;
+// }
 
 .social-text{
   display: flex;
@@ -384,7 +380,6 @@ nav{
   }
 }
 
-
 .social-img{
   width: 50px;
   margin: 14px;
@@ -398,18 +393,17 @@ nav{
   border-radius: 50%;
 }
 
-
 // -----------NEW MEMBERS----------- //
 
 .new-members{
-  grid-column: 1/2;
+  // grid-column: 1/2;
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px;
+  //padding: 20px;
 
     h3{
-      margin-bottom: 20px;
+      margin: 30px 0 10px;
     }
 }
 
@@ -417,7 +411,7 @@ nav{
   display:flex;
   flex-direction: row;
   border-bottom: 1px solid $line-color;
-  padding: 7px 0;
+  padding: 7px; //0;
   height: 50px;
 
     a{
@@ -444,25 +438,26 @@ nav{
 // -----------RECENT ACTIVITY----------- //
 
 .recent-activity{
-  grid-column: 2/3;
+  // grid-column: 2/3;
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px;
+  //padding: 20px;
 
   h3{
-    margin-bottom: 20px;
+    margin: 30px 0 10px;
   }
 }
 
 // -----------MESSAGE USER----------- //
 
 .message-user{
-  grid-column: 1/2;
+  // grid-column: 1/2;
   background-color: white;
 
   h3{
-    padding: 20px 0 10px 20px
+    margin: 30px 0 10px;
+    //padding: 20px 0 10px 20px;
   }
 
   form{
@@ -506,20 +501,20 @@ nav{
           margin-top: 15px;
         }
       }
-
   }
 
 // -----------SETTINGS----------- //
 
 .settings{
-  grid-column: 2/3;
+  // grid-column: 2/3;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
   h3{
-     padding: 20px 0 10px 20px
+    margin: 30px 0 10px;
+    // padding: 20px 0 10px 20px;
    }
 
   form{
@@ -594,8 +589,8 @@ nav{
       opacity: 0;
       width: 0;
       height: 0;
-
     }
+
     p{
       width: 100%;
     }
@@ -686,13 +681,13 @@ button:focus{
   .nav-small{
     display: none;
   }
-
 }
 
 
  @media only screen and (min-width: 500px){
 
   header{
+
     h3{
       display: inline-block;
       font-size: .7em;
@@ -701,16 +696,20 @@ button:focus{
       font-weight: lighter;
       color: white;
     }
+
     .icon{
+
       img{
         margin-top:10px;
       }
     }
+
     img{
      width: 1.5em;
      height: 1.5em;
      margin: 20px 0 0 15px;
    }
+
    .icon::after{
      top: 10px;
      right: 0;
@@ -720,43 +719,35 @@ button:focus{
   }
 
   .d-search{
+
     input{
       width: 300px;
     }
   }
- }
+}
 
  @media only screen and (min-width: 768px){
 
    body{
-   //  display: grid;
-   //  grid-template-columns: 60px 1fr;
-   //  grid-template-rows: 1fr 1fr;
-   //  grid-template-areas:
-   //  'header  header'
-   //  'nav container';
-   // }
 
-   header{
-     position: fixed;
-     z-index: 1000;
-     //grid-area: header;
-   }
-
-   .dashboard{
-     margin-top: 60px;
-   }
-
-   .d-search{
-
-     input{
-       width: 300px;
+     header{
+       position: fixed;
+       z-index: 1000;
      }
-   }
+
+     .dashboard{
+       margin-top: 60px;
+     }
+
+     .d-search{
+
+       input{
+         width: 300px;
+       }
+     }
 
    nav{
      position: fixed;
-     //grid-area: nav;
      top: 60px;
      display:flex;
      flex-direction: column;
@@ -787,18 +778,15 @@ button:focus{
    }
 
    .grid-container{
-     //grid-area: container;
      display: grid;
      grid-template-columns: repeat(2,1fr);
-
      grid-gap: 1px;
      background-color: $line-color;
-     //float: right;
      margin-left: 60px;
    }
 
    .social-stats{
      justify-content: space-around;
    }
- }
+  }
 }

@@ -101,8 +101,8 @@ const mainChart= new Chart(mainTraffic, {
             padding: {
                 left: 10,
                 right: 10,
-                top: 0,
-                bottom: 20
+                top: 5,
+                bottom: 5
             }
         },
         scales: {
@@ -132,6 +132,14 @@ const dChart= new Chart(dailyTraffic, {
     responsive: true,
     legend:{
       display: false,
+    },
+    layout: {
+        padding: {
+            left: 10,
+            right: 10,
+            top: 5,
+            bottom: 5
+        }
     },
     scales: {
         yAxes: [{
@@ -171,7 +179,14 @@ const mChart= new Chart(mobileUsers, {
     legend:{
       position: 'right',
 
-    },
+    },layout: {
+        padding: {
+          left: 10,
+          right: 10,
+          top: 5,
+          bottom: 5
+        }
+    }
 
   }
 });

@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -11,6 +10,11 @@ body {
   font-family: "Roboto", sans-serif;
   color: #757575;
   font-weight: 400;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 i {
@@ -31,6 +35,7 @@ h3 {
   font-weight: lighter;
   text-transform: uppercase;
   color: #757575;
+  text-align: center;
 }
 
 p {
@@ -41,15 +46,8 @@ p {
   font-size: 0.8em;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-}
-
 header {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 60px;
   background-color: #7476bb;
@@ -58,7 +56,6 @@ header .icon {
   position: relative;
   height: 70%;
   margin: auto 0;
-  padding-right: 1em;
   border-right: 1px solid black;
 }
 header .icon img {
@@ -68,9 +65,10 @@ header img {
   width: 2em;
   height: 2em;
   border-radius: 50%;
-  margin: 15px 30px 0 15px;
+  margin: 15px 15px 0 15px;
+  cursor: pointer;
 }
-header .dot {
+header .notification-dot {
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -111,14 +109,13 @@ nav {
   background-color: #4e4d70;
   z-index: 1000;
 }
-nav a {
-  width: 65px;
-  margin: 0 15px;
-  height: auto;
-  padding: 20px;
+nav a img {
+  display: none;
 }
 nav .nav-small {
   margin: 0 auto;
+  padding: 20px 0;
+  margin: 0 15px;
 }
 nav .nav-small img {
   display: block;
@@ -126,23 +123,28 @@ nav .nav-small img {
   height: auto;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 1px;
+  background-color: #ccc;
+}
+
 .dashboard {
   display: flex;
   justify-content: flex-start;
   background-color: #fafafa;
   height: 60px;
-  grid-column: 1/3;
-  grid-row: 1/2;
 }
 .dashboard .d-container {
   background-color: white;
-  margin-right: auto;
   border-right: 1px solid #ccc;
 }
 .dashboard .d-container h2 {
   font-weight: 400;
-  margin: 15px;
-  padding: 5px;
+  margin: 15px 0;
+  padding: 5px 15px;
   color: #757575;
 }
 .dashboard .d-search {
@@ -150,24 +152,22 @@ nav .nav-small img {
 }
 .dashboard .d-search input {
   height: 40px;
-  float: right;
-  margin: 10px 20px;
+  width: 140px;
+  margin: 10px 5px;
   padding-left: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
 .alert-container {
-  grid-column: 1/3;
-  grid-row: 2/3;
   background-color: white;
-  margin: -1px;
+  margin: -1px 0;
 }
 .alert-container .alert {
   height: 30px;
   color: white;
   background-color: #4e4d70;
-  margin: 20px;
+  margin: 10px;
   border-radius: 6px;
 }
 .alert-container .alert p {
@@ -179,26 +179,26 @@ nav .nav-small img {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  font-size: 0.8em;
 }
 
 .alert-banner-close {
   margin-right: 5px;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .traffic {
-  grid-column: 1/3;
-  grid-row: 3/4;
-  padding: 0 20px;
   background-color: white;
 }
-.traffic .t-header {
-  display: flex;
-  justify-content: space-between;
+.traffic .t-header h3 {
+  margin: 20px 0 20px;
 }
 
 .t-nav {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   list-style: none;
 }
 
@@ -206,6 +206,7 @@ nav .nav-small img {
   padding: 10px;
   color: #757575;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .active {
@@ -216,36 +217,39 @@ nav .nav-small img {
 
 .widget-container-full {
   position: relative;
-  background-color: white;
+  background-color: yellow;
+  width: 95vw;
+  height: 15vh;
   margin: 20px 0;
 }
 
 .daily-traffic, .mobile-users {
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
   background-color: white;
 }
 .daily-traffic h3, .mobile-users h3 {
   margin: 30px 0 10px;
 }
-.daily-traffic .widget-container-half, .mobile-users .widget-container-half {
-  background-color: white;
-  margin-bottom: 40px;
+
+.widget-container-half {
   position: relative;
+  background-color: yellow;
+  width: 95vw;
+  height: 15vh;
+  margin-bottom: 40px;
 }
 
 .social-stats {
-  grid-column: 1/3;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
-  padding: 20px;
+  justify-content: center;
   background-color: white;
 }
 .social-stats h3 {
   display: block;
   width: 100%;
+  margin: 30px 0 10px;
 }
 
 .social-container {
@@ -260,10 +264,6 @@ nav .nav-small img {
   height: 80px;
   margin: 20px 10px;
   background-color: #fafafa;
-}
-
-.social-container:last-child {
-  margin-right: 0;
 }
 
 .social-text {
@@ -295,21 +295,19 @@ nav .nav-small img {
 }
 
 .new-members {
-  grid-column: 1/2;
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px;
 }
 .new-members h3 {
-  margin-bottom: 20px;
+  margin: 30px 0 10px;
 }
 
 .members-container {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #ccc;
-  padding: 7px 0;
+  padding: 7px;
   height: 50px;
 }
 .members-container a {
@@ -332,22 +330,19 @@ nav .nav-small img {
 }
 
 .recent-activity {
-  grid-column: 2/3;
   display: flex;
   flex-direction: column;
   background-color: white;
-  padding: 20px;
 }
 .recent-activity h3 {
-  margin-bottom: 20px;
+  margin: 30px 0 10px;
 }
 
 .message-user {
-  grid-column: 1/2;
   background-color: white;
 }
 .message-user h3 {
-  padding: 20px 0 10px 20px;
+  margin: 30px 0 10px;
 }
 .message-user form {
   border-style: none;
@@ -387,14 +382,13 @@ nav .nav-small img {
 }
 
 .settings {
-  grid-column: 2/3;
   background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 .settings h3 {
-  padding: 20px 0 10px 20px;
+  margin: 30px 0 10px;
 }
 .settings form {
   height: 100%;
