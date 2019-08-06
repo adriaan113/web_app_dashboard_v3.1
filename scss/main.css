@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 body {
@@ -38,6 +39,12 @@ p {
 
 ::placeholder {
   font-size: 0.8em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
 }
 
 header {
@@ -103,6 +110,7 @@ nav {
   width: 100%;
   height: 60px;
   background-color: #4e4d70;
+  z-index: 1000;
 }
 nav a {
   width: 65px;
@@ -117,11 +125,6 @@ nav .nav-small img {
   display: block;
   width: 30px;
   height: auto;
-}
-
-.grid-container {
-  width: 100%;
-  height: 100%;
 }
 
 .dashboard {
@@ -198,8 +201,8 @@ nav .nav-small img {
 }
 
 .widget-container-full {
+  position: relative;
   background-color: white;
-  height: 100%;
   margin: 20px 0;
 }
 
@@ -215,6 +218,7 @@ nav .nav-small img {
 .daily-traffic .widget-container-half, .mobile-users .widget-container-half {
   background-color: white;
   margin-bottom: 40px;
+  position: relative;
 }
 
 .social-stats {
@@ -550,30 +554,18 @@ button:focus {
   }
 }
 @media only screen and (min-width: 768px) {
-  body {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "header  header" "nav container";
-  }
-
-  header {
+  body header {
     position: fixed;
     z-index: 1000;
-    grid-area: header;
   }
-
-  .dashboard {
+  body .dashboard {
     margin-top: 60px;
   }
-
-  .d-search input {
+  body .d-search input {
     width: 300px;
   }
-
-  nav {
+  body nav {
     position: fixed;
-    grid-area: nav;
     top: 60px;
     display: flex;
     flex-direction: column;
@@ -584,32 +576,29 @@ button:focus {
     float: left;
     overflow-x: hidden;
   }
-  nav a {
+  body nav a {
     width: 65px;
     margin: 15px 0;
     height: auto;
     padding: 20px;
   }
-  nav .nav-selected {
+  body nav .nav-selected {
     border-left: 4px solid lightgreen;
     border-bottom: 0;
   }
-  nav img {
+  body nav img {
     width: 100%;
     padding-bottom: 0;
     margin-left: -2px;
   }
-
-  .grid-container {
-    grid-area: container;
+  body .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1px;
     background-color: #ccc;
-    float: right;
+    margin-left: 60px;
   }
-
-  .social-stats {
+  body .social-stats {
     justify-content: space-around;
   }
 }

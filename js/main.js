@@ -20,7 +20,7 @@ navSelect.addEventListener('click',(e)=>{
 
 //-----------TRAFFIC INTERACTION-----------//
 
-const tNav= document.querySelector('.t-nav');
+//const tNav= document.querySelector('.t-nav');
 const tNavLink= document.querySelectorAll('.t-nav-link');
 
 
