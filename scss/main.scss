@@ -226,13 +226,33 @@ nav{
 
   .alert{
     height: 30px;
-    background-color: yellow;
+    color: white;
+    //padding: 5px;
+    background-color: $accent-color-dark-purple;
     margin: 20px;
     border-radius: 6px;
+      p{
+        display: inline-block;
+        //float: left;
+        //clear: left;
+      }
   }
 }
 
+.alert-banner{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
 
+.alert-message{
+  //margin-right: auto;
+}
+.alert-banner-close{
+  //margin-left: auto;
+  margin-right: 5px;
+}
 
 // -----------TRAFFIC----------- //
 

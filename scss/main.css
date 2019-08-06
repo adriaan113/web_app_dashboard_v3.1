@@ -166,9 +166,24 @@ nav .nav-small img {
 }
 .alert-container .alert {
   height: 30px;
-  background-color: yellow;
+  color: white;
+  background-color: #4e4d70;
   margin: 20px;
   border-radius: 6px;
+}
+.alert-container .alert p {
+  display: inline-block;
+}
+
+.alert-banner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.alert-banner-close {
+  margin-right: 5px;
 }
 
 .traffic {
