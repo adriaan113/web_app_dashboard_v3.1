@@ -1,3 +1,14 @@
+//-----------NOTIFICATION ICON MENU-----------//
+
+const icon= document.querySelector('.icon > img');
+const iconAfter= document.querySelector('.dot');
+
+icon.addEventListener('click', ()=>{
+  iconAfter.style.display='none';
+});
+
+
+
 //-----------ALERT MESSAGE-----------//
 
 const alert= document.querySelector('#alert');
