@@ -100,6 +100,69 @@ header h3 {
   display: none;
 }
 
+.dropbtn {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.dropbtn:hover {
+  transform: rotate(-20deg);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fafafa;
+  top: 0;
+  left: -100px;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+}
+
+.dropdown-content a {
+  color: black;
+  font-size: 0.7em;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #4e4d70;
+}
+
+.show {
+  display: block;
+}
+
+.icon-menu-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-menu-items:hover {
+  background-color: #4e4d70;
+}
+
+.icon-menu-close {
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.icon-menu-close:hover {
+  background-color: lightgreen;
+}
+
 nav {
   display: flex;
   flex-direction: row;
@@ -379,6 +442,44 @@ nav .nav-small img {
   color: white;
   background-color: #7476bb;
   margin-top: 15px;
+  cursor: pointer;
+}
+
+.send-pop-up {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+.send-pop-up p:last-child {
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.succes {
+  background-color: lightgreen;
+}
+
+.error {
+  background-color: #e35742;
+}
+
+.send-pop-up-message {
+  font-size: 0.7em;
+  color: white;
+}
+
+.autocomplete-items {
+  font-size: 0.8em;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  margin-top: -10px;
+  cursor: pointer;
 }
 
 .settings {
@@ -545,6 +646,11 @@ button:focus {
   }
 }
 @media only screen and (min-width: 500px) {
+  .dropdown-content {
+    left: -50px;
+    min-width: 200px;
+  }
+
   h3 {
     text-align: left;
     padding-left: 15px;
