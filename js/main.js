@@ -262,3 +262,61 @@ document.addEventListener("click", function (e) {
 }
 
 autocomplete(document.getElementById("user-search"), users);
+
+
+//-----------SAVE SETTINGS TO LOCAL STORAGE-----------//
+
+
+
+const emailCheckbox= document.querySelector('#notifications');
+const publicCheckbox= document.querySelector('#public');
+const timeZone = document.querySelector('#timezone');
+//const timeZoneOptions = document.getElementsByTagName('option');
+let tzo;
+let emailSet= localStorage.getItem("email");
+let publicSet= localStorage.getItem("public");
+let timeZoneSet= localStorage.getItem("timezone");
+
+
+
+emailCheckbox.addEventListener('click',()=>{
+  if(emailCheckbox.checked=== true){
+    localStorage.setItem("email", "on");
+  } else if(emailCheckbox.checked=== false){
+    localStorage.setItem("email", "off");
+  }
+});
+
+publicCheckbox.addEventListener('click',()=>{
+  if(publicCheckbox.checked=== true){
+    localStorage.setItem("public", "on");
+  } else if(publicCheckbox.checked=== false){
+    localStorage.setItem("public","off");
+  }
+});
+
+timeZone.addEventListener('input',()=>{
+  //tzo = timeZone.value;
+  tzo = JSON.stringify(timeZone.value)
+  localStorage.setItem('tzo', JSON.stringify(timeZone.value));
+  //console.log(tzo);
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded',()=>{
+  if (emailSet === "on"){
+    emailCheckbox.checked = true;
+  }
+
+  if(publicSet === "on"){
+    publicCheckbox.checked = true;
+  }
+
+  let retrievedObject = localStorage.getItem('tzo');
+
+  console.log(JSON.parse(retrievedObject));
+  // if(tzo=== true)
+  //   tzo
+});
