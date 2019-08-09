@@ -270,12 +270,10 @@ autocomplete(document.getElementById("user-search"), users);
 
 const emailCheckbox= document.querySelector('#notifications');
 const publicCheckbox= document.querySelector('#public');
-const timeZone = document.querySelector('#timezone');
-//const timeZoneOptions = document.getElementsByTagName('option');
-let tzo;
 let emailSet= localStorage.getItem("email");
 let publicSet= localStorage.getItem("public");
-let timeZoneSet= localStorage.getItem("timezone");
+const timeZone = document.querySelector('#timezone');
+let timeZoneSet= localStorage.getItem("timeZone", timeZone.value);
 
 
 
@@ -296,10 +294,7 @@ publicCheckbox.addEventListener('click',()=>{
 });
 
 timeZone.addEventListener('input',()=>{
-  //tzo = timeZone.value;
-  tzo = JSON.stringify(timeZone.value)
-  localStorage.setItem('tzo', JSON.stringify(timeZone.value));
-  //console.log(tzo);
+  localStorage.setItem('timeZone', timeZone.value);
 });
 
 
@@ -314,9 +309,5 @@ document.addEventListener('DOMContentLoaded',()=>{
     publicCheckbox.checked = true;
   }
 
-  let retrievedObject = localStorage.getItem('tzo');
-
-  console.log(JSON.parse(retrievedObject));
-  // if(tzo=== true)
-  //   tzo
+  timeZone.value = timeZoneSet;
 });
