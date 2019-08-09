@@ -215,7 +215,6 @@ nav .nav-small img {
 }
 .dashboard .d-search input {
   height: 40px;
-  width: 140px;
   margin: 10px 5px;
   padding-left: 10px;
   border-radius: 6px;
@@ -241,12 +240,14 @@ nav .nav-small img {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  padding: 8px 10px 10px 10px;
   font-size: 0.8em;
 }
 
 .alert-banner-close {
   margin-right: 5px;
+  font-size: 1.2em;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -641,7 +642,6 @@ button:focus {
     margin-left: auto;
   }
   .d-search input {
-    width: auto;
     float: right;
   }
 }

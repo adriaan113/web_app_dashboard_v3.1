@@ -307,9 +307,10 @@ nav{
 
   .d-search{
     background-color: $accent-color-grey;
+
       input{
         height: 40px;
-        width: 140px;
+        //width: 140px;
         //float: right;
         margin: 10px 5px;
         padding-left: 10px;
@@ -343,12 +344,18 @@ nav{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  align-items: center;
+  padding: 8px 10px 10px 10px;
   font-size: .8em;
 }
 
+// .alert-message{
+//   margin: -5px;
+// }
+
 .alert-banner-close{
   margin-right: 5px;
+  font-size: 1.2em;
   font-weight: bolder;
   cursor: pointer;
 }
@@ -826,7 +833,7 @@ button:focus{
   .d-search{
     margin-left: auto;
       input{
-        width: auto;
+        //width: auto;
         float: right;
       }
    }
